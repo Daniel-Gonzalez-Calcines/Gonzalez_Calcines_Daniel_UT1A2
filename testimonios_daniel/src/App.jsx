@@ -1,6 +1,7 @@
 import React from 'react';
 import Testimonio from './components/Testimonio';
 import { Typography, Grid2 } from '@mui/material';
+import { DanielGC } from 'milibreria';
 
 const App = () => {
   const testimoniosData = [
@@ -51,6 +52,21 @@ const App = () => {
             />
           </Grid2>
         ))}
+      </Grid2>
+      <Grid2 container spacing={2} justifyContent="center" alignItems="center" style={{ width: '100vw', margin: '0 auto' }}>
+        <Grid2>
+          <Typography>
+            Puntue su experiencia
+          </Typography>
+        </Grid2>
+        <Grid2>
+        <DanielGC
+        defval={3}
+        precision={0.1}
+        color="error"
+        maxrating={10}
+      />
+        </Grid2>
       </Grid2>
     </div>
   );

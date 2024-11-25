@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Card, CardMedia, CardContent, Typography, IconButton, Dialog, DialogContent } from '@mui/material';
-import FavoriteIcon from '@mui/icons-material/Favorite'; 
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'; 
+import { Myfavouriteborder, MyFavourite, Mybutton } from 'milibreria';
 
 const Testimonio = ({ imageUrl, altText, title, body }) => {
   const [liked, setLiked] = useState(false); 
@@ -56,12 +55,16 @@ const Testimonio = ({ imageUrl, altText, title, body }) => {
             style={{ maxWidth: '90%', maxHeight: '80vh', cursor: 'pointer' }} 
             onClick={toggleLike}
           />
-          <IconButton onClick={toggleLike} sx={{ marginTop: '10px' }}>
-          <Typography variant="body2" color="textSecondary">
-            Me gusta
-          </Typography>
-            {liked ? <FavoriteIcon color="error" /> : <FavoriteBorderIcon />}
-          </IconButton>
+          {liked ? <MyFavourite onClick={toggleLike} color="error" /> : <Myfavouriteborder onClick={toggleLike} color="error" />}
+          <Mybutton
+            bgcolor='white'
+            size='medium'
+            bordercolor='red'
+            borderwidth='2'
+            hover='red'
+            txtcolor='black'
+            text={"Seguir"}
+          />
           <Typography variant="body1" component="p" sx={{ marginTop: '10px' }}>
             {body}
           </Typography>
